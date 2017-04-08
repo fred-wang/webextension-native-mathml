@@ -1,0 +1,26 @@
+{
+    "useBrowserContext_title": {
+        "message": "Utilize o menu de contexto do navegador"
+    },
+    "useBrowserContext_description": {
+        "message": "Se essa opção estive habilitada, a extensão irá prevenir que o MathJax sobre escreva o menu de contexto do navegador."
+    },
+    "disableMathJaxZoom_title": {
+        "message": "Desabilita o zoom do MathJax"
+    },
+    "disableMathJaxZoom_description": {
+        "message": "Se essa opção estiver habilitada, a extensão irá prevenir que o MathJax de acionar o zoom das fórmulas matemáticas."
+    },
+    "disableMathJaxMML2jax_title": {
+        "message": "Desabilita o preprocessador mml2jax do MathJax"
+    },
+    "disableMathJaxMML2jax_description": {
+        "message": "Se essa opção estiver habilitada, a extensão irá prevenir que o MathJax de preprocessar qualquer elemento MathML da página."
+    },
+    "fixMathJaxNativeMML_title": {
+        "message": "Corrige problemas na função NativeMML do MathJax "
+    },
+    "fixMathJaxNativeMML_description": {
+        "message": "Se essa opção estiver habilitada, a extensão irá corrigir alguns problemas de renderização e desempenho do módulo de suporte nativo ao MathML do MathJax."
+    }
+}
