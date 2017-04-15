@@ -28,5 +28,8 @@
     },
     "exclusionList_exclusionList": {
         "message": "A list of URL patterns, separated by commas, indicating Web pages that the add-on should ignore. This option requires a restart to be taken into account."
+    },
+    "save": {
+        "message": "Save"
     }
 }

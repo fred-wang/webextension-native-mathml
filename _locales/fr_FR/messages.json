@@ -28,5 +28,8 @@
     },
     "exclusionList_exclusionList": {
         "message": "Une liste de motifs d'URL, séparés par des virgules, indiquant les pages Web devant être ignorées par l'extension. Cette option nécessite un redémarrage pour être prise en compte."
+    },
+    "save": {
+        "message": "Enregistrer"
     }
 }
