@@ -10,8 +10,11 @@
     "96": "icons/icon-96.png"
   },
   "options_ui": {
-      "page": "options/options.html"
+    "page": "options/options.html"
   },
   "default_locale": "en-US",
-  "permissions": ["storage"]
+  "permissions": ["<all_urls>", "storage"],
+  "background": {
+    "scripts": ["background.js"]
+  }
 }

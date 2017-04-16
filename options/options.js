@@ -4,14 +4,6 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-let gDefaultOptions = {
-  useBrowserContext: true,
-  disableMathJaxZoom: true,
-  disableMathJaxMML2jax: true,
-  fixMathJaxNativeMML: true,
-  exclusionList: "*.nbcnews.com"
-};
-
 function el(aId) {
   return document.getElementById(aId);
 }
@@ -29,15 +21,11 @@ function saveOptions(aEvent) {
 
 function loadOptions() {
   browser.storage.local.get().then((aOptions) => {
-    var options = gDefaultOptions;
-    for (var option in aOptions) {
-      options[option] = aOptions[option];
-    }
-    el("useBrowserContext").checked = options.useBrowserContext;
-    el("disableMathJaxZoom").checked = options.disableMathJaxZoom;
-    el("disableMathJaxMML2jax").checked = options.disableMathJaxMML2jax;
-    el("fixMathJaxNativeMML").checked = options.fixMathJaxNativeMML;
-    el("exclusionList").value = options.exclusionList;
+    el("useBrowserContext").checked = aOptions.useBrowserContext;
+    el("disableMathJaxZoom").checked = aOptions.disableMathJaxZoom;
+    el("disableMathJaxMML2jax").checked = aOptions.disableMathJaxMML2jax;
+    el("fixMathJaxNativeMML").checked = aOptions.fixMathJaxNativeMML;
+    el("exclusionList").value = aOptions.exclusionList;
   });
 }
 

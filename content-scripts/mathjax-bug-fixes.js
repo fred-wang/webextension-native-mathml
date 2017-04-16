@@ -26,7 +26,10 @@ var NativeMMLPreTranslate = function (state) {
   }
 };
 
-self.port.on("set-bug-fixes", function(aBugConfig) {
+browser.runtime.onMessage.addListener(function(aMessage) {
+  if (aMessage.name !== "set-bug-fixes")
+    return;
+
   // Insert a MathJax config block that will wait for the MathJax components
   // to become ready and will then perform some modifications to the MathJax
   // code in order to improve performance and fix some rendering bugs.
@@ -34,7 +37,7 @@ self.port.on("set-bug-fixes", function(aBugConfig) {
   xMathJaxConfig.type = "text/x-mathjax-config";
   xMathJaxConfig.textContent = "";
 
-  if (aBugConfig.fixMathJaxNativeMML) {
+  if (aMessage.fixMathJaxNativeMML) {
     // Fix some MathJax bugs in unpacked/jax/output/NativeMML/jax.js
     xMathJaxConfig.textContent +=
     "MathJax.Hub.Register.StartupHook(\"NativeMML Jax Ready\", function () {" +
@@ -49,7 +52,7 @@ self.port.on("set-bug-fixes", function(aBugConfig) {
     "});";
   }
 
-  if (aBugConfig.disableMathJaxMML2jax) {
+  if (aMessage.disableMathJaxMML2jax) {
     // Unregister the mml2jax preprocessor once the extensions are loaded.
     xMathJaxConfig.textContent +=
     "MathJax.Hub.Register.StartupHook(\"End Extensions\", function () {" +

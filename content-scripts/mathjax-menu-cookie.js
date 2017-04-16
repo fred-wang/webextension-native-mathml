@@ -4,10 +4,13 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-self.port.on("set-menu-cookie", function(aMenuConfig) {
+browser.runtime.onMessage.addListener(function(aMessage) {
+  if (aMessage.name !== "set-menu-cookie")
+    return;
+
   // Create a mjx.menu cookie for this document to modify the menu option.
-  document.cookie = "mjx.menu=" + escape(aMenuConfig) + "; path=/";
-}, false);
+  document.cookie = "mjx.menu=" + escape(aMessage.menuConfig) + "; path=/";
+});
 
 // Delete the cookie once the page is loaded. We do not want to keep a cookie
 // for each domain visited and most pages using MathJax will already have
