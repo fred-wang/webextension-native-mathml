@@ -13,8 +13,23 @@
     "page": "options/options.html"
   },
   "default_locale": "en-US",
-  "permissions": ["<all_urls>", "storage"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "all_frames": true,
+      "css": [
+        "content-scripts/katex.css",
+        "content-scripts/mediawiki.css"
+      ],
+       "js": [
+         "content-scripts/mathjax-bug-fixes.js",
+         "content-scripts/mathjax-menu-cookie.js"
+       ],
+      "run_at": "document_start"
+    }
+  ],
   "background": {
     "scripts": ["background.js"]
-  }
+  },
+  "permissions": ["storage"]
 }

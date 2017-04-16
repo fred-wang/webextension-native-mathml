@@ -4,7 +4,7 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-var NativeMMLPreTranslate = function (state) {
+let NativeMMLPreTranslate = function (state) {
   var scripts = state.jax[this.id];
   for (var i = 0; i < scripts.length; i++) {
     var script = scripts[i]; if (!script.parentNode) continue;
@@ -26,18 +26,15 @@ var NativeMMLPreTranslate = function (state) {
   }
 };
 
-browser.runtime.onMessage.addListener(function(aMessage) {
-  if (aMessage.name !== "set-bug-fixes")
-    return;
-
+function setMathJaxConfig(aOptions) {
   // Insert a MathJax config block that will wait for the MathJax components
   // to become ready and will then perform some modifications to the MathJax
   // code in order to improve performance and fix some rendering bugs.
-  var xMathJaxConfig = document.createElement("script");
+  let xMathJaxConfig = document.createElement("script");
   xMathJaxConfig.type = "text/x-mathjax-config";
   xMathJaxConfig.textContent = "";
 
-  if (aMessage.fixMathJaxNativeMML) {
+  if (aOptions.fixMathJaxNativeMML) {
     // Fix some MathJax bugs in unpacked/jax/output/NativeMML/jax.js
     xMathJaxConfig.textContent +=
     "MathJax.Hub.Register.StartupHook(\"NativeMML Jax Ready\", function () {" +
@@ -52,7 +49,7 @@ browser.runtime.onMessage.addListener(function(aMessage) {
     "});";
   }
 
-  if (aMessage.disableMathJaxMML2jax) {
+  if (aOptions.disableMathJaxMML2jax) {
     // Unregister the mml2jax preprocessor once the extensions are loaded.
     xMathJaxConfig.textContent +=
     "MathJax.Hub.Register.StartupHook(\"End Extensions\", function () {" +
@@ -69,4 +66,13 @@ browser.runtime.onMessage.addListener(function(aMessage) {
   if (document.head && xMathJaxConfig.textContent !== "") {
     document.head.appendChild(xMathJaxConfig);
   }
+}
+
+// Insert the x-mathjax-config once the DOM is ready.
+document.addEventListener("DOMContentLoaded", function() {
+  let port = browser.runtime.connect();
+  port.onMessage.addListener((aOptions) => {
+    port.disconnect();
+    setMathJaxConfig(aOptions);
+  });
 });

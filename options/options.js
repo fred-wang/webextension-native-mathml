@@ -20,12 +20,15 @@ function saveOptions(aEvent) {
 }
 
 function loadOptions() {
-  browser.storage.local.get().then((aOptions) => {
+  let port = browser.runtime.connect();
+  port.onMessage.addListener((aOptions) => {
+    port.disconnect();
     el("useBrowserContext").checked = aOptions.useBrowserContext;
     el("disableMathJaxZoom").checked = aOptions.disableMathJaxZoom;
     el("disableMathJaxMML2jax").checked = aOptions.disableMathJaxMML2jax;
     el("fixMathJaxNativeMML").checked = aOptions.fixMathJaxNativeMML;
     el("exclusionList").value = aOptions.exclusionList;
+    el("options").addEventListener("submit", saveOptions);
   });
 }
 
@@ -39,5 +42,4 @@ function localizeUI() {
 document.addEventListener("DOMContentLoaded", function() {
   localizeUI();
   loadOptions();
-  el("options").addEventListener("submit", saveOptions);
 });
