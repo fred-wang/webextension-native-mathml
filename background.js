@@ -38,6 +38,7 @@ function tryAndInjectContentScripts(aTab) {
     runAt: "document_start"
   }).then(function() {
     let menuConfig = "renderer:NativeMML"; // Force the native MathML output.
+    menuConfig += "&;semantics:true";      // Preserve semantics annotations.
     if (gOptions.useBrowserContext) {
       menuConfig += "&;context:Browser";   // Force the browser context menu.
     }
