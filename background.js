@@ -35,10 +35,20 @@ function initializeOptions() {
   });
 }
 
+function shouldExcludeURL(aURL) {
+  // FIXME: Implement exclusion list?
+  // https://github.com/fred-wang/webextension-native-mathml/issues/2
+  return false;
+}
+
 // When an addon or content script connects to us, provide the current options.
-// FIXME: Consider exclusionList for js scripts?
 browser.runtime.onConnect.addListener((aPort) => {
-  initializeOptions().then(function() {
-    aPort.postMessage(gOptions);
+  aPort.onMessage.addListener(function(aURL) {
+    initializeOptions().then(function() {
+      if (aURL && shouldExcludeURL(aURL))
+        aPort.disconnect();
+      else
+        aPort.postMessage(gOptions);
+    });
   });
 });

@@ -30,6 +30,7 @@ function loadOptions() {
     el("exclusionList").value = aOptions.exclusionList;
     el("options").addEventListener("submit", saveOptions);
   });
+  port.postMessage(null);
 }
 
 function localizeUI() {

@@ -32,3 +32,4 @@ port.onMessage.addListener((aOptions) => {
   port.disconnect();
   configureMathJaxMenu(aOptions);
 });
+port.postMessage(document.location.href);

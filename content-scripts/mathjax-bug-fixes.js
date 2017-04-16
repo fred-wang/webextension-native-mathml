@@ -75,4 +75,5 @@ document.addEventListener("DOMContentLoaded", function() {
     port.disconnect();
     setMathJaxConfig(aOptions);
   });
+  port.postMessage(document.location.href);
 });
