@@ -22,6 +22,8 @@
     height: auto !important;
     width: auto !important;
     overflow: visible;
+    /* some websites add display: none */
+    display: initial;
 }
 .katex .katex-html {
     display: none;
