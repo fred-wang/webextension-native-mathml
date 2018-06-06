@@ -1,35 +1,35 @@
 {
     "useBrowserContext_title": {
-        "message": "Use browser context menu"
+        "message": "Usa il menu contestuale del browser"
     },
     "useBrowserContext_description": {
-        "message": "If this option is enabled, the add-on will prevent MathJax from overriding the browser context menu."
+        "message": "Se questa opzione è attiva, l'add-on impedirà a MathJax di sovrascrivere il menu contestuale del browser."
     },
     "disableMathJaxZoom_title": {
-        "message": "Disable MathJax zoom"
+        "message": "Disabilta lo zoom di MathJax"
     },
     "disableMathJaxZoom_description": {
-        "message": "If this option is enabled, the add-on will prevent MathJax from triggering zoom of mathematical formulas."
+        "message": "Se questa opzione è attiva, l'add-on impedirà a MathJax di attivare lo zoom sulle formule matematiche."
     },
     "disableMathJaxMML2jax_title": {
-        "message": "Disable MathJax mml2jax preprocessor"
+        "message": "Disabilta MathJax mml2jax preprocessor"
     },
     "disableMathJaxMML2jax_description": {
-        "message": "If this option is enabled, the add-on will prevent MathJax from preprocessing any MathML elements in the page."
+        "message": "Se questa opzione è attiva, l'add-on impedirà a MathJax di preprocessessare gli elemtenti MathML nella pagina."
     },
     "fixMathJaxNativeMML_title": {
-        "message": "Fix MathJax NativeMML bugs"
+        "message": "Risolvi alcuni bug di MathJax NativeMML"
     },
     "fixMathJaxNativeMML_description": {
-        "message": "If this option is enabled, the add-on will fix some rendering and performance bugs MathJax in its Native MathML module."
+        "message": "Se questa opzione è attiva, l'add-on risolverà alcuni problemi di rendering e prestazioni di MathJax presenti nel suo modulo MathML Nativo."
     },
     "exclusionList_title": {
-        "message": "Exclusion list"
+        "message": "Lista Esclusioni"
     },
     "exclusionList_description": {
-        "message": "A list of URL patterns, separated by commas, indicating Web pages that the add-on should ignore. This option requires a restart to be taken into account."
+        "message": "Una lista di pattern URL, separati da virgole, di pagine che l'add-on deve ignorare. Questa opzione richiede che le pagine vengano ricaricare per funzionare."
     },
     "save": {
-        "message": "Save"
+        "message": "Salva"
     }
 }
