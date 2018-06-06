@@ -12,6 +12,7 @@
     width: auto;
     height: auto;
     opacity: 1;
+    display: inherit !important;
 }
 /* Support where MediaWiki lazy loaded images */
 .mwe-math-mathml-inline ~ .lazy-image-placeholder,
