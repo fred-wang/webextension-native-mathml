@@ -26,5 +26,5 @@
     display: initial;
 }
 .katex .katex-html {
-    display: none;
+    display: none !important;
 }
