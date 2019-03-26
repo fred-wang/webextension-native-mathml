@@ -6,12 +6,12 @@
 
 /* Reset some CSS properties set by MediaWiki and hide the image fallback */
 .mwe-math-mathml-a11y {
-    clip: auto;
-    overflow: visible;
-    position: static;
-    width: auto;
-    height: auto;
-    opacity: 1;
+    clip: auto !important;
+    overflow: visible !important;
+    position: static !important;
+    width: auto !important;
+    height: auto !important;
+    opacity: 1 !important;
     display: inherit !important;
 }
 /* Support where MediaWiki lazy loaded images */
