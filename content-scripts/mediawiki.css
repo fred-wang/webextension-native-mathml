@@ -14,6 +14,10 @@
     opacity: 1 !important;
     display: inherit !important;
 }
+body.mediawiki .ve-ce-mwLatexNode .mwe-math-mathml-a11y {
+    /* override https://phabricator.wikimedia.org/diffusion/EMAT/browse/master/modules/ve-math/ve.ce.MWLatexNode.css */
+    display: inherit !important;
+}
 /* Support where MediaWiki lazy loaded images */
 .mwe-math-mathml-inline ~ .lazy-image-placeholder,
 .mwe-math-mathml-display ~ .lazy-image-placeholder,
