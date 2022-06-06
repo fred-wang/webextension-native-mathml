@@ -15,14 +15,14 @@ function configureMathJaxMenu(aOptions) {
   }
 
   // Create a mjx.menu cookie for this document to modify the menu option.
-  document.cookie = "mjx.menu=" + escape(menuConfig) + "; path=/";
+  document.cookie = "mjx.menu=" + escape(menuConfig) + "; path=/; SameSite=Strict";
 
   // Delete the cookie once the page is loaded. We do not want to keep a cookie
   // for each domain visited and most pages using MathJax will already have
   // read it during MathJax's startup sequence.
   window.addEventListener("load", function() {
     document.cookie =
-      "mjx.menu=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT";
+      "mjx.menu=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT; SameSite=Strict";
   });
 }
 
