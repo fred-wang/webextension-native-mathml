@@ -1,0 +1,34 @@
+/* -*- Mode: CSS; tab-width: 2; indent-tabs-mode:nil; c-basic-offset: 2 -*- */
+/* vim: set ts=2 et sw=2 tw=80: */
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+/* Hide MathJax's own output. */
+mjx-container > mjx-math {
+    display: none !important;
+}
+mjx-container > svg {
+    display: none !important;
+}
+
+/* Reset properties set on the assistive MathML, so that it shows up. */
+mjx-container > mjx-assistive-mml {
+    display: inline !important;
+    position: revert !important;
+    clip: revert;
+    top: revert;
+    left: revert;
+    padding: revert;
+    border: revert !important;
+    overflow: revert !important;
+    -webkit-touch-callout: revert;
+    -webkit-user-select: revert;
+    -khtml-user-select: revert;
+    -moz-user-select: revert;
+    -ms-user-select: revert;
+    user-select: revert;
+}
+mjx-container > mjx-assistive-mml[display="block"] {
+    display: block !important;
+}
