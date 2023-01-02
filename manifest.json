@@ -1,7 +1,7 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "Native MathML",
-  "version": "1.9.6",
+  "version": "2.0.0",
   "description": "Force MathJax/KaTeX/MediaWiki to use native MathML rendering.",
   "author": "Frédéric Wang",
   "homepage_url": "https://github.com/fred-wang/webextension-native-mathml",
