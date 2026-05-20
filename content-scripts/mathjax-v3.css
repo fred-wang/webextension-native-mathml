@@ -17,6 +17,8 @@ mjx-container > mjx-assistive-mml {
     display: inline !important;
     position: revert !important;
     clip: revert;
+    clip-path: revert;
+    -webkit-clip-path: revert;
     top: revert;
     left: revert;
     padding: revert;

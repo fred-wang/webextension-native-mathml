@@ -7,6 +7,8 @@
 /* Reset some CSS properties set by MediaWiki and hide the image fallback */
 .mwe-math-mathml-a11y {
     clip: auto !important;
+    clip-path: revert !important;
+    -webkit-clip-path: revert !important;
     overflow: visible !important;
     position: static !important;
     width: auto !important;

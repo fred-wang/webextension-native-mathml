@@ -19,6 +19,8 @@
 .katex .katex-mathml {
     position: static !important;
     clip: auto;
+    clip-path: revert;
+    -webkit-clip-path: revert;
     height: auto !important;
     width: auto !important;
     overflow: visible;
